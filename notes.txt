@@ -1,0 +1,9 @@
+Why used graphql?
++GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API.
++Prevent data over fetching and under fetching. what is needed we can get that data only.
+
+//Schema
+Your GraphQL server uses a schema to describe the shape of your available data. This schema defines a hierarchy of types with fields that are populated from your back-end data stores. The schema also specifies exactly which queries and mutations are available for clients to execute.
+
+//Resolvers
+Resolvers tell Apollo Server how to fetch the data associated with a particular type.  It simply returns the array when queried.
