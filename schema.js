@@ -10,6 +10,8 @@ export const typeDefs = `#graphql
     id: ID!
     title: String!
     platform: [String]!
+    reviews: [Review!]!
+
   }
 
   # The "Query" type is special: it lists all of the available queries that
@@ -22,13 +24,18 @@ export const typeDefs = `#graphql
 
 type Review {
     id: ID!
+    game_id: ID!
     rating: Int!
     content: String!
+    # Relation create kora hoise every review is associated with a game and author
+    game: Game!
+    author: Author!
   }
   type Author {
     id: ID!
     name: String!
     verified: Boolean!
+    reviews: [Review!]!
   }
 
 # The "Query" type is special: it lists all of the available queries that
@@ -37,8 +44,10 @@ type Review {
   type Query {
     reviews: [Review]  #query for returns array of reviews
     review(id:ID!): Review     #query for returns single review 
-    authors: [Author]
     games: [Game]
+    game(id: ID!): Game
+    authors: [Author]
+    author(id: ID!): Author
   }
 `;
 
